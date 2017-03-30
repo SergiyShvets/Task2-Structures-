@@ -1,11 +1,5 @@
 Task 2 
 
-Skip to end of metadata 
-
-Created by Andriy Korkuna  3 minutes ago 
-
-Go to start of metadata 
-
 As a developer
 
 I want to have a class that can store single values of C++ fundamental type (except void and std::nullptr_t) and a function/method
