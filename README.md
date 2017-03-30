@@ -29,21 +29,32 @@ The function/method that extracts a value should provide type-safe access. If th
 should be thrown
 
 Usage example:
+
 AnyType anyType = 1;
+
 anyType = true;
+
 anyType = 1.7;
 
+
 try
+
 {
     int storedValue = anyType.ToInt();
+    
 }
+
 catch(exceptionType&)
 {
+
     //Bad cast exception
 }
 
+
 double storedValue = anyType.ToDouble();
+
 ...
+
 See:
 C++ Data Structures
 C++ Classes and Objects
