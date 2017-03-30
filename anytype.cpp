@@ -201,6 +201,7 @@ AnyType &AnyType::operator =(const AnyType &assign)
 {
     _type = assign._type;
     _typeName = assign._typeName;
+    _valueSign = assign._valueSign;
 
     std::cout << "assigment operator called " << std::endl;
 
@@ -212,6 +213,7 @@ AnyType &AnyType::operator =(AnyType &&moveAssign)
 
     _type = std::move(moveAssign._type);
     _typeName = std::move(moveAssign._typeName);
+    _valueSign = std::move(moveAssign._valueSign);
 
     std::cout << "move assigment operator called " << std::endl;
 
