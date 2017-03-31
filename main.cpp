@@ -23,7 +23,7 @@ int main()
         std::cout << e.what() << std::endl;
     }
 
-    any2.printTypeName();
+    any2.getTypeName();
 
     any = any2;
 
@@ -45,9 +45,8 @@ int main()
         std::cout << e.what() << std::endl;
     }
 
-    any.printTypeName();
 
-    std::cout << "data is: " << any.getDoubleData() << std::endl;
+    std::cout << "data is: " << any.getDoubleData() << " type is: " << any.getTypeName() << std::endl;
 
     return 0;
 }

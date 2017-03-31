@@ -2,6 +2,7 @@
 #define ANYTYPE_H
 
 #include <bitset>
+#include <cstring>
 
 namespace SpaceOfTypes {
 
@@ -54,7 +55,7 @@ public:
     /**
       * @brief AnyType - default d-tor
       */
-    ~AnyType();
+    ~AnyType() = default;
 
     /**
      * @brief AnyType - copy c-tor
@@ -138,33 +139,33 @@ public:
      * in other ways it throwing the bad cast exception
      * @return - stored data
      */
-    bool getBoolData();
+    bool getBoolData() const;
 
-    char getCharData();
-    uchar getUcharData();
-    wchar_t getWchar_tData();
+    char getCharData() const;
+    uchar getUcharData() const;
+    wchar_t getWchar_tData() const;
 
-    short getShortData();
-    ushort getUshortData();
+    short getShortData() const;
+    ushort getUshortData() const;
 
-    int getIntData();
-    uint getUintData();
+    int getIntData() const;
+    uint getUintData() const;
 
-    long getLongData();
-    ulong getUlongData();
+    long getLongData() const;
+    ulong getUlongData() const;
 
-    long long getLongLongData();
-    ulongLong getUlongLongData();
+    long long getLongLongData() const;
+    ulongLong getUlongLongData() const;
 
-    float getFloatData();
+    float getFloatData() const;
 
-    double getDoubleData();
-    long double getLongDoubleData();
+    double getDoubleData() const;
+    long double getLongDoubleData() const;
 
     /**
      * @brief printTypeName - method prints the type of variable
      */
-    void printTypeName();
+    std::string getTypeName();
 
 
 private:

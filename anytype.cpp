@@ -24,11 +24,6 @@ AnyType::AnyType(AnyType &&move)
     std::cout << "move c-tor called" << std::endl;
 }
 
-AnyType::~AnyType()
-{
-    std::cout << "d-tor called" << std::endl;
-}
-
 AnyType::AnyType(bool value)
 {
     _type._bool = value;
@@ -436,9 +431,9 @@ long double AnyType::toLongDouble()
     }
 }
 
-void AnyType::printTypeName()
+std::string AnyType::getTypeName()
 {
-    const char* typeInfo;
+    std::string typeInfo;
 
     switch (_typeName) {
 
@@ -523,10 +518,10 @@ void AnyType::printTypeName()
         break;
     }
 
-    std::cout << "value type: " << typeInfo << std::endl;
+    return typeInfo;
 }
 
-bool AnyType::getBoolData()
+bool AnyType::getBoolData() const
 {
     if(_typeName == TypeName::BOOL){
 
@@ -540,7 +535,7 @@ bool AnyType::getBoolData()
     }
 }
 
-char AnyType::getCharData()
+char AnyType::getCharData() const
 {
     if(_typeName == TypeName::CHAR){
 
@@ -554,7 +549,7 @@ char AnyType::getCharData()
     }
 }
 
-uchar AnyType::getUcharData()
+uchar AnyType::getUcharData() const
 {
     if(_typeName == TypeName::UCHAR){
 
@@ -568,7 +563,7 @@ uchar AnyType::getUcharData()
     }
 }
 
-wchar_t AnyType::getWchar_tData()
+wchar_t AnyType::getWchar_tData() const
 {
     if(_typeName == TypeName::WCHAR_T){
 
@@ -582,7 +577,7 @@ wchar_t AnyType::getWchar_tData()
     }
 }
 
-short AnyType::getShortData()
+short AnyType::getShortData() const
 {
     if(_typeName == TypeName::SHORT){
 
@@ -596,7 +591,7 @@ short AnyType::getShortData()
     }
 }
 
-ushort AnyType::getUshortData()
+ushort AnyType::getUshortData() const
 {
     if(_typeName == TypeName::USHORT){
 
@@ -610,7 +605,7 @@ ushort AnyType::getUshortData()
     }
 }
 
-int AnyType::getIntData()
+int AnyType::getIntData() const
 {
     if(_typeName == TypeName::INT){
 
@@ -624,7 +619,7 @@ int AnyType::getIntData()
     }
 }
 
-uint AnyType::getUintData()
+uint AnyType::getUintData() const
 {
     if(_typeName == TypeName::UINT){
 
@@ -638,7 +633,7 @@ uint AnyType::getUintData()
     }
 }
 
-long AnyType::getLongData()
+long AnyType::getLongData() const
 {
     if(_typeName == TypeName::LONG){
 
@@ -652,7 +647,7 @@ long AnyType::getLongData()
     }
 }
 
-ulong AnyType::getUlongData()
+ulong AnyType::getUlongData() const
 {
     if(_typeName == TypeName::ULONG){
 
@@ -666,7 +661,7 @@ ulong AnyType::getUlongData()
     }
 }
 
-long long AnyType::getLongLongData()
+long long AnyType::getLongLongData() const
 {
     if(_typeName == TypeName::LONG_LONG){
 
@@ -680,7 +675,7 @@ long long AnyType::getLongLongData()
     }
 }
 
-ulongLong AnyType::getUlongLongData()
+ulongLong AnyType::getUlongLongData() const
 {
     if(_typeName == TypeName::ULONG_LONG){
 
@@ -694,7 +689,7 @@ ulongLong AnyType::getUlongLongData()
     }
 }
 
-float AnyType::getFloatData()
+float AnyType::getFloatData() const
 {
     if(_typeName == TypeName::FLOAT){
 
@@ -708,7 +703,7 @@ float AnyType::getFloatData()
     }
 }
 
-double AnyType::getDoubleData()
+double AnyType::getDoubleData() const
 {
     if(_typeName == TypeName::DOUBLE){
 
@@ -722,7 +717,7 @@ double AnyType::getDoubleData()
     }
 }
 
-long double AnyType::getLongDoubleData()
+long double AnyType::getLongDoubleData() const
 {
     if(_typeName == TypeName::LONG_DOUBLE){
 
