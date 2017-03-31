@@ -194,10 +194,13 @@ AnyType::AnyType(long double value)
 
 AnyType &AnyType::operator =(const AnyType &assign)
 {
+    if(this != &assign) {
+        
     _type = assign._type;
     _typeName = assign._typeName;
     _valueSign = assign._valueSign;
-
+    }
+    
     std::cout << "assigment operator called " << std::endl;
 
     return *this;
@@ -205,11 +208,13 @@ AnyType &AnyType::operator =(const AnyType &assign)
 
 AnyType &AnyType::operator =(AnyType &&moveAssign)
 {
-
+    if(this != &moveAssign) {
+        
     _type = std::move(moveAssign._type);
     _typeName = std::move(moveAssign._typeName);
     _valueSign = std::move(moveAssign._valueSign);
-
+    }
+    
     std::cout << "move assigment operator called " << std::endl;
 
     return *this;
